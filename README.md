@@ -1,7 +1,7 @@
 
 ---
 
-# 🚗 Sybil Attack Detection in VANETs
+#  Sybil Attack Detection in VANETs
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
 
 ## A Comparative Ablation Study across VeReMi Dataset Variants
@@ -12,7 +12,7 @@ Contrary to common assumptions, results show that **trajectory-level aggregation
 
 ---
 
-## 🔍 Overview
+##  Overview
 
 This project systematically evaluates Sybil attack detection performance across **four experimental configurations**, using:
 
@@ -31,12 +31,12 @@ The experiments isolate the effect of:
 
 ---
 
-## 📦 Datasets
+##  Datasets
 
 | Dataset          | Size    | Messages | Sender Identity |
 | ---------------- | ------- | -------- | --------------- |
-| VeReMi (raw)     | ~7 GB   | 22M      | ❌ Not available |
-| VeReMi Extension | ~1.2 GB | 3.2M     | ✅ Available     |
+| VeReMi (raw)     | ~7 GB   | 22M      |  Not available |
+| VeReMi Extension | ~1.2 GB | 3.2M     |  Available     |
 
 To handle scale safely, **raw VeReMi** is processed using **memory-safe chunked ingestion**:
 
@@ -45,7 +45,7 @@ To handle scale safely, **raw VeReMi** is processed using **memory-safe chunked 
 
 ---
 
-## 🧪 Experimental Design
+##  Experimental Design
 
 Each experiment incrementally adds **one capability at a time**, enabling clean attribution of performance gains.
 
@@ -63,7 +63,7 @@ Identity features are **not available in real-world VANET deployments** and are 
 
 ---
 
-## 📊 Model Performance (Experiment 4)
+##  Model Performance (Experiment 4)
 
 | Metric | Normal | Sybil | Macro Avg |
 |---|---|---|---|
@@ -75,7 +75,7 @@ Identity features are **not available in real-world VANET deployments** and are 
 
 ---
 
-## 📈 Key Insight: Where the Gains Come From
+##  Key Insight: Where the Gains Come From
 
 The **33 percentage-point accuracy improvement** between Exp-1 and Exp-4 decomposes approximately as:
 
@@ -83,12 +83,12 @@ The **33 percentage-point accuracy improvement** between Exp-1 and Exp-4 decompo
 * **+4 pp** → Sender identity availability
 * **+14 pp** → Trajectory-level feature aggregation
 
-📌 **Conclusion:**
+**Conclusion:**
 Even *perfect models* perform poorly when forced to reason at the **per-message level** without historical context.
 
 ---
 
-## 🧠 Why Trajectories Matter
+##  Why Trajectories Matter
 
 Sybil attacks are **temporal and behavioral** by nature.
 
@@ -103,7 +103,7 @@ Trajectory aggregation allows the detector to capture:
 
 ---
 
-## 🧮 Trajectory-Level Features (Experiment 4)
+##  Trajectory-Level Features (Experiment 4)
 
 Per-vehicle aggregates computed across the **entire transmission history**:
 
@@ -119,7 +119,7 @@ These features encode **behavioral consistency**, which is the core weakness of 
 
 ---
 
-## 🧪 Methodological Takeaways
+##  Methodological Takeaways
 
 * Message-level ML is fundamentally limited for Sybil detection
 * Dataset realism matters more than classifier choice
@@ -128,7 +128,7 @@ These features encode **behavioral consistency**, which is the core weakness of 
 
 ---
 
-## 🎯 Research Contribution
+##  Research Contribution
 
 This work demonstrates—quantitatively—that:
 
@@ -138,7 +138,7 @@ The findings help explain why many VANET Sybil papers report unstable or non-gen
 
 ---
 
-## ⚙️ Reproducing Results
+## Reproducing Results
 
 1. Download **VeReMi Extension** from  
    https://data.mendeley.com/datasets/k62n4z9gdz
@@ -156,7 +156,7 @@ Execute top to bottom to reproduce all reported results.
 
 ---
 
-## 📄 License
+##  License
 
 MIT License — free for academic research and reproducibility.
 
